@@ -1,7 +1,7 @@
 variable "region" {
   description = "Region"
-  type = string
-  default = "us-east-2"
+  type        = string
+  default     = "us-east-2"
 }
 variable "subnet_count" {
   description = "Number of subnets to be created for each public & private."
@@ -33,7 +33,7 @@ variable "cidr" {
   description = "(Optional) The IPv4 CIDR block for the VPC. CIDR can be explicitly set or it can be derived from IPAM using `ipv4_netmask_length` & `ipv4_ipam_pool_id`"
   type        = string
   # default     = "10.0.0.0/16"
-  default     = "10.0.0.0/20"
+  default = "10.0.0.0/20"
 }
 
 variable "secondary_cidr_blocks" {
@@ -186,7 +186,7 @@ variable "public_subnets" {
   description = "A list of public subnets inside the VPC"
   type        = list(string)
   # default     = []
-  default     = []
+  default = []
 }
 
 variable "public_subnet_assign_ipv6_address_on_creation" {
@@ -1188,7 +1188,7 @@ variable "igw_tags" {
 variable "enable_nat_gateway" {
   description = "Should be true if you want to provision NAT Gateways for each of your private networks"
   type        = bool
-  default     = false   ####### NAT DEFAULT FALSE #######
+  default     = true
 }
 
 variable "nat_gateway_destination_cidr_block" {
@@ -1200,7 +1200,7 @@ variable "nat_gateway_destination_cidr_block" {
 variable "single_nat_gateway" {
   description = "Should be true if you want to provision a single shared NAT Gateway across all of your private networks"
   type        = bool
-  default     = false   ####### NAT DEFAULT FALSE #######  
+  default     = true
 }
 
 variable "one_nat_gateway_per_az" {

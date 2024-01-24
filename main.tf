@@ -93,8 +93,8 @@ module "base_infra" {
   ################################################################################
   # Private Subnets
   ################################################################################
-  # private_subnets                                               = length(var.private_subnets) > 0 ? var.private_subnets : local.private_subnets
-  private_subnets                                               = var.private_subnets
+  private_subnets                                               = length(var.private_subnets) > 0 ? var.private_subnets : local.private_subnets
+  # private_subnets                                               = var.private_subnets
   private_subnet_assign_ipv6_address_on_creation                = var.private_subnet_assign_ipv6_address_on_creation
   private_subnet_enable_dns64                                   = var.private_subnet_enable_dns64
   private_subnet_enable_resource_name_dns_aaaa_record_on_launch = var.private_subnet_enable_resource_name_dns_aaaa_record_on_launch
