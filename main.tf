@@ -12,7 +12,7 @@ data "aws_availability_zones" "available" {
 locals {
   name   = var.name
   region = var.region
-  debug = true
+  debug  = true
 
   azs = slice(data.aws_availability_zones.available.names, 0, var.subnet_count)
 
@@ -93,7 +93,7 @@ module "base_infra" {
   ################################################################################
   # Private Subnets
   ################################################################################
-  private_subnets                                               = length(var.private_subnets) > 0 ? var.private_subnets : local.private_subnets
+  private_subnets = length(var.private_subnets) > 0 ? var.private_subnets : local.private_subnets
   # private_subnets                                               = var.private_subnets
   private_subnet_assign_ipv6_address_on_creation                = var.private_subnet_assign_ipv6_address_on_creation
   private_subnet_enable_dns64                                   = var.private_subnet_enable_dns64

@@ -17,8 +17,7 @@ locals {
 }
 
 module "base_infra" {
-  source = "./modules/base_infra"  #use the compunnel repo. source link for the module
-
+  source = "git::https://github.com/CD-TeraformModules/aws-vpc.git"
   name = "${local.tags.managed_by}-${local.tags.project}"
 
   tags = merge({
@@ -42,7 +41,7 @@ terraform {
       version = ">= 3.6.0"
     }
   }
-  required_version = ">= 1.7.0"
+  required_version = ">= 1.6.4"
 }
 
 provider "aws" {
