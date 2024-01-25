@@ -17,7 +17,7 @@ locals {
 }
 
 module "base_infra" {
-  source = "git::https://github.com/CD-TeraformModules/aws-vpc.git"
+  source = "git::https://github.com/sp2001singh/module-compunnel.git"
   name = "${local.tags.managed_by}-${local.tags.project}"
 
   tags = merge({
